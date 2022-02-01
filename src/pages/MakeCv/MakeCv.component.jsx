@@ -1,5 +1,11 @@
 const MakeCv = () => {
-    return <h1>MakeCv</h1>;
+    return (
+        <div className='make-cv'>
+            <div className='container'>
+                <h1>MakeCv</h1>
+            </div>
+        </div>
+    );
 };
 
 export default MakeCv;
