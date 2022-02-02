@@ -6,6 +6,7 @@ import About from './pages/About/About.component';
 import MakeCv from './pages/MakeCv/MakeCv.component';
 // Components
 import Navbar from './components/Navbar/Navbar.component';
+import Footer from './components/Footer/Footer.component';
 
 function App() {
     return (
@@ -18,6 +19,8 @@ function App() {
                 <Route path='about' element={<About />} />
                 <Route path='makecv' element={<MakeCv />} />
             </Routes>
+
+            <Footer />
         </div>
     );
 }
