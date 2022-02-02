@@ -1,5 +1,5 @@
 .slider {
-    min-height: calc(60vh - 56px);
+    min-height: calc(85vh - 56px);
 
     .header-area {
         height: 100%;
@@ -35,29 +35,7 @@
         // padding: 130px 0;
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .header-one .header-content-area {
-            padding: 100px 0;
-        }
-    }
 
-    @media (max-width: 767px) {
-        .header-one .header-content-area {
-            padding: 60px 0;
-        }
-    }
-
-    @media only screen and (min-width: 1400px) {
-        .header-one .header-content-area {
-            min-height: calc(60vh - 56px);
-        }
-    }
-
-    @media (max-width: 767px) {
-        .header-one .header-content-area {
-            min-height: calc(60vh - 56px);
-        }
-    }
 
     .header-one .header-content-area .primary-btn-outline {
         border-color: var(--white);
@@ -73,6 +51,8 @@
 
     .header-one .header-wrapper {
         position: relative;
+        margin-top: -80px;
+
     }
 
     .header-one .header-content {
@@ -104,27 +84,17 @@
         max-width: 550px;
     }
 
-    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-        .header-one .header-image .image {
-            max-width: 600px;
-        }
-    }
 
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        .header-one .header-image .image {
-            max-width: 550px;
-        }
-    }
 
     .header-one .header-image .image img {
         width: 90%;
-        height: 500px;
-        margin: 20px 0 120px 0;
+        height: 480px;
+        margin: 40px 0 130px 0;
     }
 
     .header-one .header-shape {
         position: absolute;
-        bottom: -1px;
+        bottom: 0;
         left: 0;
         right: 0;
         width: 100%;
