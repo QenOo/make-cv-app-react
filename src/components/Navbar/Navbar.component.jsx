@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/image/logo.png';
+import './Navbar.styles.scss';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, userInfo }) => {
+    console.log(isLoggedIn);
     return (
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
             <div className='container'>
                 <Link className='navbar-brand' to='/'>
-                    MAKE_CV
+                    <img src={Logo} alt='imageLogo' width='50px' />
                 </Link>
 
                 <button
@@ -39,37 +42,70 @@ const Navbar = () => {
                             </Link>
                         </li>
                     </ul>
-                    <div className='dropdown'>
-                        <button
-                            className='btn btn-secondary dropdown-toggle'
-                            type='button'
-                            id='dropdownMenuButton1'
-                            data-bs-toggle='dropdown'
-                            aria-expanded='false'
-                        >
-                            Dropdown button
-                        </button>
-                        <ul
-                            className='dropdown-menu'
-                            aria-labelledby='dropdownMenuButton1'
-                        >
-                            <li>
-                                <Link className='dropdown-item' to='#'>
-                                    Action
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className='dropdown-item' to='#'>
-                                    Another action
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className='dropdown-item' to='#'>
-                                    Log Out
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+                    {isLoggedIn ? (
+                        <div className='dropdown'>
+                            <button
+                                className='btn dropdown-toggle'
+                                type='button'
+                                id='dropdownMenuButton1'
+                                data-bs-toggle='dropdown'
+                                aria-expanded='false'
+                            >
+                                Welcome <i className='lni lni-heart'></i>
+                                {' { '}
+                                <span className='text-primary'>
+                                    {userInfo.name}
+                                </span>
+                                {' } '}
+                            </button>
+                            <ul
+                                className='dropdown-menu'
+                                aria-labelledby='dropdownMenuButton1'
+                            >
+                                <li>
+                                    <Link className='dropdown-item' to='#'>
+                                        Profile (sooon)
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className='dropdown-item' to='#'>
+                                        Settings (sooon)
+                                    </Link>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={() => {
+                                            localStorage.setItem(
+                                                'isLoggedIn',
+                                                'false'
+                                            );
+                                            window.location.reload();
+                                        }}
+                                        className='dropdown-item'
+                                    >
+                                        Log Out
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    ) : (
+                        <>
+                            <Link
+                                to='/signup'
+                                className='btn icon-left primary-btn mx-2'
+                            >
+                                <i className='lni lni-key'></i>
+                                Sign Up
+                            </Link>
+                            <Link
+                                to='/signin'
+                                className='btn icon-left primary-btn-outline'
+                            >
+                                <i className='lni lni-unlock'></i>
+                                Sign In
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </nav>
