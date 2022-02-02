@@ -1,43 +1,61 @@
 import './Slider.styles.scss';
 import { Link } from 'react-router-dom';
+import headerImage from '../../assets/image/headerImage.png';
 
 const Slider = () => {
     return (
+        // <!--====== HEADER ONE PART START ======-->
         <div className='slider'>
-            <section className='slider-bg-image'>
-                <div className='justify-content-center align-items-center d-flex-columns text-center pt-5'>
-                    <img
-                        src={
-                            'https://dummyimage.com/100x100/000/f7136b.png&text=Make+CV'
-                        }
-                        alt='images'
-                        className='d-block mx-auto rounded-circle img-fluid'
-                    />
-                    <h1 className=' text-uppercase text-light mb-2 mt-5'>
-                        <strong>Unique, impressive CV in minutes</strong>{' '}
-                    </h1>
-                    <p className='lead text-light mb-5'>
-                        MAKE YOUR RESUME Now 100% FOR FREE!
-                    </p>
-                    <p>
-                        <Link
-                            className='btn btn-outline-light btn-lg'
-                            to='/makecv'
-                        >
-                            Get Started Now &gt;
-                        </Link>
-                    </p>
-                    <div className='btn-container-wrapper p-relative d-block z-index-1'>
-                        <a
-                            className='btn btn-outline-light border-0 btn-lg pr-2 pl-2 pt-3 pb-3  mt-md-5  scroll align-self-center  '
-                            href='#section-1'
-                        >
-                            <i className='fa fa-angle-down fa-2x  '></i>
-                        </a>
+            <section className='header-area header-one'>
+                <div className='header-content-area'>
+                    <div className='container'>
+                        <div className='row align-items-center'>
+                            <div className='col-lg-6 col-12'>
+                                <div className='header-wrapper'>
+                                    <div className='header-content'>
+                                        <h1 className='header-title text-uppercase'>
+                                            Easy Customisable & UNIQUE,
+                                            IMPRESSIVE CV
+                                        </h1>
+                                        <p className='text-lg'>
+                                            IN MINUTES MAKE YOUR RESUME Now 100%
+                                            FOR FREE!
+                                        </p>
+                                        <div className='header-btn rounded-buttons'>
+                                            <Link
+                                                className='btn primary-btn-outline btn-lg'
+                                                to='makecv'
+                                            >
+                                                Get started
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    {/* <!-- header content --> */}
+                                </div>
+                            </div>
+                            <div className='col-lg-6 col-12'>
+                                <div className='header-image d-none d-lg-block'>
+                                    <div className='image'>
+                                        <img src={headerImage} alt='Header' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <!-- row --> */}
                     </div>
+                    {/* <!-- container --> */}
+                    <div className='header-shape'>
+                        <img
+                            src='https://cdn.ayroui.com/1.0/images/header/header-shape.svg'
+                            alt='shape'
+                        />
+                    </div>
+                    {/* <!-- header-shape --> */}
                 </div>
+                {/* <!-- header content area --> */}
             </section>
         </div>
+        // <!--====== HEADER ONE PART ENDS ======-->
     );
 };
 
