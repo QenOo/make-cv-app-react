@@ -6,6 +6,7 @@ import About from './pages/About/About.component';
 import MakeCv from './pages/MakeCv/MakeCv.component';
 import SignUp from './pages/SignUp/SignUp.component';
 import SignIn from './pages/SignIn/SignIn.component';
+import Cv from './pages/Cv/Cv.component';
 
 // Components
 import Navbar from './components/Navbar/Navbar.component';
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='about' element={<About />} />
                 <Route path='makecv' element={<MakeCv />} />
+                <Route path='cv' element={<Cv />} />
                 <Route path='*' element={<h1>404</h1>} />
                 <Route
                     path='signin'
